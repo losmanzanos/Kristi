@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Company — A Consultation Group for Therapists · Commend Counseling, Littleton CO</title>
+<meta name="description" content="A six-month consultation group in Littleton, Colorado for therapists early in private practice. Monthly in-person sessions, case consultation, and a small group that stays. Led by Kristi Cobble, LPC.">
+<link rel="canonical" href="https://losmanzanos.github.io/Kristi/">
+<meta name="theme-color" content="#2E3D46">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Commend Counseling">
+<meta property="og:url" content="https://losmanzanos.github.io/Kristi/">
+<meta property="og:title" content="Good Company — a consultation group for therapists">
+<meta property="og:description" content="A six-month consultation group in Littleton, Colorado for therapists early in private practice. Monthly in-person sessions, case consultation, and a small group that stays. Led by Kristi Cobble, LPC.">
+<meta property="og:image" content="https://losmanzanos.github.io/Kristi/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Glacial water meeting black volcanic rock, with the words You have the license. Now you need the people.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Good Company — a consultation group for therapists">
+<meta name="twitter:description" content="A six-month consultation group in Littleton, Colorado for therapists early in private practice. Monthly in-person sessions, case consultation, and a small group that stays. Led by Kristi Cobble, LPC.">
+<meta name="twitter:image" content="https://losmanzanos.github.io/Kristi/og-image.jpg">
+
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Imperial+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ground — deep slate, not black */
+  --slate:#2E3D46;
+  --slate-dp:#26333B;
+  --slate-lt:#3B4C56;
+  --line:rgba(237,231,220,.16);
+
+  /* warm relief */
+  --bone:#EDE7DC;
+  --bone-2:#E0D8C9;
+
+  /* warmth — lightness corrected for AA at small sizes */
+  --brass:#CD9B62;      /* 4.52:1 on slate  (was #C89153 = 4.08, failed) */
+  --brass-lt:#DFB57A;   /* 5.89:1 on slate */
+  --ember:#A25230;      /* 4.51:1 on bone   (was #AE5834 = 4.02, failed) */
+  --ember-lt:#AE5834;   /* decorative only, large sizes */
+
+  --mute:#9AA6AE;       /* 4.51:1 on slate  (was #93A0A8 = 4.18, failed) */
+
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --hand:"Imperial Script",cursive;
+
+  --maxw:1300px;
+  --gutter:clamp(20px,4.4vw,64px);
+  --sy:clamp(95px,12vw,175px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--slate);color:var(--bone);
+  opacity:0;transition:opacity .28s ease;
+
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.62;font-size:16.5px;
+}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:4}
+
+.grain{position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.34;mix-blend-mode:overlay}
+.grain svg{width:100%;height:100%}
+
+/* ---------- geometry (v3 vocabulary, v4 palette) ---------- */
+.geo{position:absolute;pointer-events:none;z-index:1;will-change:transform}
+.g-frame{border:1.5px solid currentColor}
+.g-ring{border:1.5px solid currentColor;border-radius:50%}
+.g-arc{border:1.5px solid currentColor;border-radius:50%;
+  clip-path:polygon(50% 50%,100% 0,100% 100%,50% 100%)}
+.g-fill{background:currentColor}
+.g-dot{background-image:radial-gradient(currentColor 1.1px,transparent 1.1px);background-size:12px 12px}
+.g-hatch{background-image:repeating-linear-gradient(46deg,currentColor 0 1px,transparent 1px 7px)}
+
+.cut-hex{clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.cut-tri{clip-path:polygon(0 100%,100% 100%,100% 0)}
+
+/* photo shapes — natural color, no overlays */
+.ph{position:absolute;overflow:hidden;z-index:2;will-change:transform}
+.ph img{width:100%;height:100%;object-fit:cover}
+.sh-circ{border-radius:50%}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:100;background:rgba(46,61,70,.93);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:20px 0}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:12px}
+.brand b{font-size:17px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bone)}
+.brand i{font-family:var(--hand);font-style:normal;font-size:30px;color:var(--brass);line-height:.7}
+.nav-links{display:flex;gap:clamp(16px,2.4vw,36px);align-items:center}
+.nav-links a{color:var(--bone);text-decoration:none;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;transition:color .3s}
+.nav-links a:hover{color:var(--brass-lt)}
+
+.btn{display:inline-block;border:1.5px solid currentColor;color:var(--bone);
+  padding:16px 32px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  font-weight:700;text-decoration:none;transition:background .35s,color .35s,border-color .35s}
+.btn:hover{background:var(--brass);border-color:var(--brass);color:var(--slate-dp)}
+.btn-dark{color:var(--slate-dp)}
+.btn-dark:hover{background:var(--slate-dp);border-color:var(--slate-dp);color:var(--bone)}
+
+/* ---------- type ---------- */
+h1{font-size:clamp(38px,5.9vw,84px);line-height:.99;text-transform:uppercase;font-weight:800;letter-spacing:-.012em;text-wrap:balance;overflow-wrap:break-word}
+h2{font-size:clamp(26px,3.5vw,46px);line-height:1.06;text-transform:uppercase;font-weight:800;letter-spacing:-.008em;text-wrap:balance;overflow-wrap:break-word}
+h3{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--brass)}
+.hand{font-family:var(--hand);font-weight:400;line-height:.78;letter-spacing:0;text-transform:none;color:var(--brass);display:block}
+.hand-xl{font-size:clamp(50px,7.2vw,100px);opacity:.92}
+.hand-lg{font-size:clamp(38px,4.9vw,66px)}
+.hand-hero{font-size:clamp(58px,7.6vw,112px);line-height:.82}
+.hand-md{font-size:clamp(32px,3.9vw,50px)}
+.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--mute);font-weight:700;display:block;margin-bottom:16px}
+p{color:rgba(237,231,220,.80);font-size:16.5px}
+.lead{font-size:18.5px;line-height:1.66;max-width:46ch}
+.lt{background:var(--bone);color:var(--slate-dp)}
+.lt h1,.lt h2{color:var(--slate-dp)}
+.lt p{color:rgba(38,51,59,.80)}
+.lt .eyebrow{color:rgba(38,51,59,.72)}      /* 4.55:1 — was .52 and failed */
+.lt .hand{color:var(--ember)}
+.lt h3{color:var(--ember)}
+
+section{position:relative;overflow:hidden}
+.sec{padding:var(--sy) 0}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(20px,2.6vw,40px) 0 clamp(32px,4vw,60px);
+  min-height:calc(100vh - var(--navh,76px));
+  min-height:calc(100svh - var(--navh,76px));
+  display:flex;align-items:center}
+/* --hs is set by script when the block is taller than the first screen */
+.hero-copy{--hs:1}
+.hero-copy h1{font-size:calc(clamp(38px,5.9vw,84px) * var(--hs))}
+.hero-copy .hand-hero{font-size:calc(clamp(58px,7.6vw,112px) * var(--hs))}
+.hero-copy .lead{font-size:calc(18.5px * var(--hs));margin-top:calc(22px * var(--hs))}
+.hero-copy .eyebrow{margin-bottom:calc(14px * var(--hs))}
+.hero-facts{margin-top:calc(30px * var(--hs));padding-top:calc(20px * var(--hs))}
+.hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(26px,4vw,58px);align-items:center;width:100%}
+.hero-copy{position:relative;z-index:6}
+.hero-stage{position:relative;height:clamp(340px,42vw,505px)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.hero-facts div{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.hero-facts b{color:var(--brass-lt);font-weight:700}
+
+/* ---------- statement ---------- */
+.stmt-bg{position:absolute;inset:0;z-index:0}
+.stmt-bg img{width:100%;height:124%;object-fit:cover;object-position:50% 38%;opacity:.28}
+.stmt-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,var(--slate) 1%,rgba(46,61,70,.74) 45%,var(--slate) 99%)}
+.stmt-in{position:relative;z-index:5;max-width:960px}
+.stmt-big{font-size:clamp(23px,2.9vw,39px);line-height:1.15;font-weight:700;text-transform:uppercase;letter-spacing:-.008em;margin-bottom:36px}
+.stmt-big u{text-decoration:none;color:var(--brass-lt)}
+.stmt-cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:46px;padding-top:38px;border-top:1px solid var(--line)}
+
+/* ---------- three ---------- */
+.three-head{max-width:760px;margin-bottom:74px}
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,4vw,56px);position:relative;z-index:4}
+.step .n{font-family:var(--hand);font-size:74px;line-height:.7;color:var(--brass);opacity:.75;display:block;margin-bottom:16px}
+.step h3{margin-bottom:14px}
+.step .hr{width:36px;height:2px;background:var(--brass);margin-bottom:20px}
+.step p{font-size:15.5px}
+
+/* ---------- quote ---------- */
+.q-in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,78px);align-items:center}
+.q-stage{position:relative;height:clamp(400px,48vw,540px)}
+.q-text{font-size:clamp(22px,2.7vw,35px);line-height:1.14;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.q-attr{margin-top:28px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ember);font-weight:700}
+
+/* ---------- details ---------- */
+.d-in{display:grid;grid-template-columns:1fr 1.14fr;gap:clamp(34px,5vw,78px);align-items:start}
+.dl{border-top:1px solid var(--line)}
+.dl>div{display:grid;grid-template-columns:112px 1fr;gap:22px;padding:19px 0;border-bottom:1px solid var(--line)}
+.dl dt{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:800;padding-top:6px}
+.dl dd{font-size:16px;color:rgba(237,231,220,.84)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chips span{border:1px solid var(--line);padding:5px 11px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mute)}
+.pricebox{margin-top:34px;border:1.5px solid var(--line);padding:32px 30px;background:rgba(237,231,220,.03)}
+.pricebox .n{font-size:48px;font-weight:800;line-height:1;color:var(--brass);letter-spacing:-.02em}
+.pricebox small{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);font-weight:700;margin:8px 0 20px}
+
+/* ---------- kristi ---------- */
+.k-in{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(34px,5vw,78px);align-items:center}
+.k-stage{position:relative;height:clamp(380px,44vw,470px)}
+.k-creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.k-creds span{border:1px solid rgba(38,51,59,.3);padding:7px 13px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(38,51,59,.78);font-weight:700}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:900px;margin:54px auto 0;border-top:1px solid rgba(38,51,59,.22);position:relative;z-index:4}
+details{border-bottom:1px solid rgba(38,51,59,.22)}
+summary{list-style:none;cursor:pointer;padding:26px 52px 26px 0;position:relative;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--slate-dp);transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--ember)}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:400;color:var(--ember);line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 60px 28px 0;font-size:16px}
+
+/* ---------- contact ---------- */
+.c-in{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,5vw,78px);align-items:center}
+.c-stage{position:relative;height:clamp(340px,42vw,460px)}
+
+footer{background:var(--slate-dp);border-top:1px solid var(--line);padding:66px 0 46px;position:relative;z-index:5}
+.f-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+footer a{color:var(--mute);text-decoration:none}
+footer a:hover{color:var(--brass-lt)}
+.f-h{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);font-weight:800;margin-bottom:16px}
+.f-in p{font-size:14.5px;color:var(--mute)}
+.f-bot{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}  /* was 60% alpha = 2.70, failed */
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero-in,.stmt-cols,.q-in,.d-in,.k-in,.c-in{grid-template-columns:1fr}
+  .three-grid{grid-template-columns:1fr;gap:44px}
+  .f-in{grid-template-columns:1fr;gap:30px}
+  .hero-stage{height:360px;order:-1}
+  .q-stage,.k-stage,.c-stage{height:325px}
+  .nav-links a:not(.btn){display:none}
+  .hero{min-height:auto}
+}
+body.ready{opacity:1}
+/* failsafe: reveal even if JS never runs */
+@keyframes revealFallback{to{opacity:1}}
+body{animation:revealFallback 0s 1.5s forwards}
+@media (prefers-reduced-motion:reduce){
+  body{opacity:1;animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="grainF">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs></svg>
+<div class="grain"><svg><rect width="100%" height="100%" filter="url(#grainF)" opacity=".4"/></svg></div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#"><b>Commend</b><i class="brand-mark">counseling</i></a>
+    <div class="nav-links">
+      <a href="#why">Why</a>
+      <a href="#how">How It Works</a>
+      <a href="#details">Dates</a>
+      <a href="#kristi">Kristi</a>
+      <a class="btn" href="#contact">Inquire</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="geo g-ring" data-sp="0.30" style="color:var(--brass);opacity:.26;width:640px;height:640px;left:-250px;top:-70px"></div>
+  <div class="geo g-dot"  data-sp="0.55" style="color:rgba(205,155,98,.34);width:300px;height:300px;right:7%;top:4%"></div>
+  <div class="geo g-frame" data-sp="-0.35" style="color:var(--slate-lt);opacity:.9;width:280px;height:280px;left:33%;bottom:-70px;transform:rotate(21deg)"></div>
+
+  <div class="wrap hero-in">
+    <div class="hero-copy rv">
+      <span class="eyebrow">A consultation group for therapists · Littleton</span>
+      <span class="hand hand-hero" style="margin:0 0 12px -3px">Good Company</span>
+      <h1>You have<br>the license.<br>Now you need<br>the people.</h1>
+      <p class="lead">Six months with a small group of clinicians who will learn your caseload, tell you the truth about it, and still be around in five years when you're the one with something to teach.</p>
+      <div style="margin-top:calc(28px * var(--hs))"><a class="btn" href="#contact">Inquire about a seat</a></div>
+      <div class="hero-facts">
+        <div>Six <b>monthly sessions</b></div>
+        <div>In person · <b>Littleton</b></div>
+        <div>Sliding scale · <b>$60–100</b></div>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="ph" data-sp="0.16" style="width:72%;height:96%;right:2%;top:0">
+        <img src="kristi-iceberg.jpg" fetchpriority="high" decoding="async" alt="Glacial water meeting black volcanic rock and snow">
+      </div>
+      <div class="geo g-frame" data-sp="-0.55" style="color:var(--brass);opacity:.8;width:250px;height:250px;left:-2%;top:14%"></div>
+      <div class="ph cut-hex" data-sp="0.85" style="width:186px;height:206px;left:0;bottom:7%">
+        <img loading="lazy" decoding="async" src="compass-map.jpg" alt="Compass resting on a topographic map">
+      </div>
+      <div class="geo g-fill" data-sp="-0.9" style="color:var(--ember-lt);opacity:.95;width:72px;height:72px;left:45%;bottom:1%;transform:rotate(14deg)"></div>
+      <div class="geo g-hatch" data-sp="1.05" style="color:rgba(223,181,122,.7);width:148px;height:118px;right:0;bottom:15%"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHY ============ -->
+<section class="sec" id="why">
+  <div class="stmt-bg"><img loading="lazy" decoding="async" src="terrain-aerial.jpg" alt=""></div>
+  <div class="geo g-ring" data-sp="0.45" style="color:var(--brass-lt);opacity:.28;width:520px;height:520px;right:-180px;top:8%"></div>
+  <div class="wrap stmt-in rv">
+    <span class="eyebrow">Why this exists</span>
+    <span class="hand hand-xl" style="margin:-8px 0 20px -8px">under the surface</span>
+    <div class="stmt-big">Most of what holds a therapist up is <u>below the waterline</u> — and nobody hands you a map to it in graduate school.</div>
+    <div class="stmt-cols">
+      <p>Graduate school gave you theory and your first year gave you paperwork, and somewhere in between you were supposed to work out what to do on a Thursday afternoon when a client says something you weren't ready for and there are eleven minutes until the next one. Most clinicians figure that out alone, badly, and at some cost to themselves.</p>
+      <p>Supervision you can find anywhere. What's harder to find is six or seven people who stay long enough to actually know you — who have heard about this client before, who will push back when your formulation is thin, and who are building the same kind of career you are at roughly the same time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section class="sec" id="how">
+  <div class="geo g-dot" data-sp="0.40" style="color:rgba(205,155,98,.26);width:340px;height:340px;left:-90px;top:12%"></div>
+  <div class="geo g-arc" data-sp="-0.50" style="color:var(--slate-lt);opacity:.95;width:400px;height:400px;right:-120px;bottom:6%"></div>
+  <div class="wrap">
+    <div class="three-head rv">
+      <span class="eyebrow">What actually happens</span>
+      <span class="hand hand-lg" style="margin:0 0 6px -6px">how it works</span>
+      <h2>Six months,<br>one morning a month.</h2>
+      <p style="margin-top:22px;max-width:52ch">Live group sessions built around your cases and the person carrying them, with reflective work in between that takes five minutes or two hours depending on the week you're having.</p>
+    </div>
+    <div class="three-grid">
+      <div class="step rv">
+        <span class="n">i</span>
+        <h3>Skills &amp; Self-Reflection</h3><div class="hr"></div>
+        <p>We go after the reasoning underneath your interventions. You'll practice saying out loud what you did and why you did it, in front of people who will ask follow-up questions, until your clinical voice sounds like yours rather than a textbook's.</p>
+      </div>
+      <div class="step rv">
+        <span class="n">ii</span>
+        <h3>Values, Made Specific</h3><div class="hr"></div>
+        <p>Who you actually want in your caseload, what you'll stop saying yes to, and whether the practice you're building is the one you'd want in ten years or just the one that happened to you. Anchored in systemic thinking and real-time Gestalt processing, while your own training and modalities stay entirely yours.</p>
+      </div>
+      <div class="step rv">
+        <span class="n">iii</span>
+        <h3>The Person Doing The Work</h3><div class="hr"></div>
+        <p>Your energy, your attachment patterns, the fears you brought in with you. You are the instrument you work with, so we spend real time getting to know it — in a small, consistent group where honest feedback and a fair amount of laughing both count as the point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="sec lt">
+  <div class="geo g-dot" data-sp="0.35" style="color:rgba(38,51,59,.14);width:100%;height:100%;left:0;top:0"></div>
+  <div class="wrap q-in">
+    <div class="q-stage">
+      <div class="ph" data-sp="0.20" style="width:72%;height:88%;left:2%;top:6%">
+        <img loading="lazy" decoding="async" src="terrain-aerial.jpg" alt="Aerial view of green ridgelines and ravines">
+      </div>
+      <div class="geo g-ring" data-sp="-0.70" style="color:var(--ember);opacity:.55;width:230px;height:230px;right:2%;top:0"></div>
+      <div class="ph sh-circ" data-sp="0.95" style="width:172px;height:172px;right:4%;bottom:4%">
+        <img loading="lazy" decoding="async" src="kristi-iceberg.jpg" alt="">
+      </div>
+      <div class="geo g-fill cut-tri" data-sp="-1.0" style="color:var(--brass);opacity:.9;width:96px;height:96px;left:58%;top:2%"></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">The thing nobody says out loud</span>
+      <div class="q-text">Too many good clinicians leave this field for reasons that have almost nothing to do with the clinical work.</div>
+      <div class="q-attr">Kristi Cobble, LPC · Founder</div>
+      <p style="margin-top:30px;max-width:46ch">She spent six years inside counselor education watching it happen, which is most of why this group exists at all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS ============ -->
+<section class="sec" id="details">
+  <div class="geo g-ring" data-sp="0.50" style="color:var(--brass);opacity:.22;width:560px;height:560px;left:-200px;bottom:-140px"></div>
+  <div class="geo g-hatch" data-sp="-0.45" style="color:rgba(154,166,174,.4);width:220px;height:300px;right:3%;top:8%"></div>
+  <div class="wrap d-in">
+    <div class="rv">
+      <span class="eyebrow">The practical part</span>
+      <span class="hand hand-lg" style="margin:0 0 8px -6px">spring cohort</span>
+      <h2>Dates,<br>cost, and<br>the ask.</h2>
+      <p style="margin-top:22px;max-width:38ch">Groups stay small on purpose. Registration closes the day before the first session, and seats do run out.</p>
+      <div class="pricebox">
+        <div class="n">$60–100</div>
+        <small>per month · sliding scale</small>
+        <p style="font-size:15.5px">The sliding scale exists because recent graduates exist. There's no form and no conversation to have about it — say so in your first email and that's the end of it.</p>
+      </div>
+    </div>
+    <div class="rv">
+      <dl class="dl">
+        <div><dt>Duration</dt><dd>Six months, January through June</dd></div>
+        <div><dt>Schedule</dt><dd>Thursdays, 9–11am — one morning a month
+          <div class="chips"><span>Jan 7</span><span>Feb 4</span><span>Mar 4</span><span>Apr 1</span><span>May 6</span><span>Jun 3</span></div>
+        </dd></div>
+        <div><dt>Format</dt><dd>In person in Littleton. Sessions cover the person of the therapist, skills and tools, and group consultation on live cases, with reflective work between meetings.</dd></div>
+        <div><dt>Also</dt><dd>An optional consultation group every month on top of the core commitment — online or in person depending on who's coming, at whatever rate you're already paying.</dd></div>
+        <div><dt>Closing</dt><dd>A full-circle dinner for anyone who wants to come, on a date the group picks together.</dd></div>
+      </dl>
+      <div style="margin-top:34px"><a class="btn" href="#contact">Ask about a seat</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KRISTI ============ -->
+<section class="sec lt">
+  <div class="geo g-dot" data-sp="0.30" style="color:rgba(38,51,59,.12);width:100%;height:100%;left:0;top:0"></div>
+  <div class="wrap k-in">
+    <div class="k-stage">
+      <div class="ph" data-sp="0.18" style="width:74%;height:94%;left:8%;top:3%">
+        <img loading="lazy" decoding="async" src="kristi-headshot.jpg" alt="Kristi Cobble, LPC">
+      </div>
+      <div class="geo g-ring" data-sp="-0.65" style="color:var(--ember);opacity:.6;width:210px;height:210px;left:-8%;bottom:2%"></div>
+      <div class="geo g-fill" data-sp="0.90" style="color:var(--brass);opacity:.95;width:58px;height:58px;right:8%;top:8%;transform:rotate(18deg)"></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Who holds the room</span>
+      <span class="hand hand-md" style="margin:0 0 4px -4px">Kristi Cobble</span>
+      <h2>LPC · Denver<br>Seminary faculty</h2>
+      <p style="margin-top:24px;max-width:54ch">Kristi has run her own practice since 2016 and spent six years at Denver Seminary, most recently as Associate Director of its PhD program in Counselor Education and Supervision. She still teaches there as adjunct faculty and sees clients in Littleton.</p>
+      <p style="margin-top:18px;max-width:54ch">Which means she has spent most of a decade on the same question from both sides of it: what it actually takes to keep good clinicians in this work and doing it well. Good Company is the version of an answer she could build herself.</p>
+      <p style="margin-top:18px;max-width:54ch">She also took the photograph at the top of this page, somewhere considerably colder than Littleton. When she isn't working she letters by hand, which is where the writing on this site comes from.</p>
+      <div class="k-creds">
+        <span>Licensed Professional Counselor</span>
+        <span>Adjunct Faculty · Denver Seminary</span>
+        <span>Counselor Education &amp; Supervision</span>
+        <span>Kaiser Permanente affiliated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec lt" style="background:var(--bone-2)">
+  <div class="geo g-ring" data-sp="0.40" style="color:rgba(162,82,48,.32);width:420px;height:420px;right:-140px;top:10%"></div>
+  <div class="wrap">
+    <div style="text-align:center;max-width:660px;margin:0 auto" class="rv">
+      <span class="eyebrow">Before you email</span>
+      <span class="hand hand-lg">questions</span>
+      <h2 style="margin-top:6px">What people ask first.</h2>
+    </div>
+    <div class="faq-list rv">
+      <details open><summary>I'd like to use the sliding scale — how do I bring that up?</summary><p>Say so in your first email and that's the whole process. The scale exists because recent graduates exist, and access matters here more than a round number does.</p></details>
+      <details><summary>How much work happens between sessions?</summary><p>The between-session exercises are written to work either as a five-minute skim or a two-hour reflection, and you decide which kind of month you're having. This is meant to add to your life rather than thin it out further.</p></details>
+      <details><summary>What if I know I'll have to miss a date?</summary><p>Plan on missing no more than one session across the six months. The group asks for that because cohesion is most of what makes it work.</p></details>
+      <details><summary>Is it monthly or twice a month?</summary><p>Monthly. It changed in December 2025, after participant feedback and a realistic look at post-graduate budgets.</p></details>
+      <details><summary>I want more consultation time than that.</summary><p>There's an optional consultation group every month on top of the core commitment, at the same rate you're already paying. RSVP whenever you want to come.</p></details>
+      <details><summary>Can I join online if I'm traveling?</summary><p>The monthly Good Company sessions are in person only. The optional consultation sessions run both online and in person, depending on who's coming that month.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="geo g-ring" data-sp="0.50" style="color:var(--brass);opacity:.26;width:600px;height:600px;left:-220px;top:-120px"></div>
+  <div class="geo g-dot" data-sp="-0.40" style="color:rgba(154,166,174,.34);width:280px;height:280px;right:6%;bottom:6%"></div>
+  <div class="wrap c-in">
+    <div class="rv">
+      <span class="eyebrow">Spring cohort</span>
+      <span class="hand hand-lg" style="margin:0 0 6px -6px">say hello</span>
+      <h2>Find out what it's like<br>to not do this alone.</h2>
+      <p style="margin-top:24px;max-width:46ch">Email Kristi. There's no application and no pitch — she'll write back, and if it isn't the right fit for you she'll say that too, and probably suggest somewhere better.</p>
+      <div style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn" href="mailto:kristi.cobble@commendcounseling.com">Email Kristi</a>
+        <a class="btn" href="tel:7205075722">720.507.5722</a>
+      </div>
+    </div>
+    <div class="c-stage">
+      <div class="ph cut-hex" data-sp="0.22" style="width:64%;height:92%;right:8%;top:2%">
+        <img loading="lazy" decoding="async" src="kristi-iceberg.jpg" alt="">
+      </div>
+      <div class="geo g-ring" data-sp="-0.70" style="color:var(--brass-lt);opacity:.5;width:200px;height:200px;left:4%;bottom:4%"></div>
+      <div class="geo g-fill" data-sp="0.95" style="color:var(--ember-lt);opacity:.95;width:60px;height:60px;left:34%;top:6%;transform:rotate(-12deg)"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-in">
+      <div>
+        <div class="hand" style="font-size:52px;margin-bottom:10px">Good Company</div>
+        <p>Consultation and community for clinicians who intend to be doing this for a long time.</p>
+      </div>
+      <div>
+        <div class="f-h">Visit</div>
+        <p>5808 South Rapp Street<br>Suite 235<br>Littleton, CO 80120</p>
+      </div>
+      <div>
+        <div class="f-h">Contact</div>
+        <p><a href="mailto:kristi.cobble@commendcounseling.com">kristi.cobble@<br>commendcounseling.com</a><br><a href="tel:7205075722">720.507.5722</a></p>
+      </div>
+    </div>
+    <div class="f-bot">© 2026 Commend Counseling · Littleton, Colorado</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var layers=[].slice.call(document.querySelectorAll('[data-sp]'));
+  layers.forEach(function(el){el.dataset.base=el.style.transform||'';});
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var vh=innerHeight,ticking=false;
+  addEventListener('resize',function(){vh=innerHeight;});
+  function frame(){
+    for(var i=0;i<layers.length;i++){
+      var el=layers[i],r=el.getBoundingClientRect();
+      if(r.bottom>-500&&r.top<vh+500){
+        var sp=parseFloat(el.dataset.sp);
+        var off=((vh-r.top)-vh*0.5)*sp*0.095;
+        el.style.transform=el.dataset.base+' translate3d(0,'+off.toFixed(2)+'px,0)';
+      }
+    }
+    var sb=document.querySelector('.stmt-bg img');
+    if(sb){
+      var pr=sb.parentNode.getBoundingClientRect();
+      if(pr.bottom>0&&pr.top<vh){
+        var p=(vh-pr.top)/(vh+pr.height);
+        sb.style.transform='translate3d(0,'+((p-.5)*-75).toFixed(1)+'px,0)';
+      }
+    }
+    ticking=false;
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(frame);}},{passive:true});
+
+  /* Re-measure once the webfonts resolve. font-display:swap renders fallback
+     metrics first, so anything sized before this is measuring the wrong font. */
+  function fitAll(){
+    /* Only headlines are fitted. Script labels are decorative and carry a
+       negative optical margin, which permanently inflates scrollWidth and
+       would drive the shrink loop straight to its floor. */
+    document.querySelectorAll('h1,h2').forEach(function(el){
+      el.style.fontSize='';
+      var box=el.parentNode;
+      var cs=getComputedStyle(box);
+      var avail=box.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0);
+      if(!avail) return;
+      var start=parseFloat(getComputedStyle(el).fontSize), size=start, guard=0;
+      /* never shrink below 70% of the designed size, so a stray overflow
+         can never collapse a headline to nothing */
+      while(el.scrollWidth>avail+1 && size>start*0.70 && guard++<40){
+        size*=0.97; el.style.fontSize=size.toFixed(2)+'px';
+      }
+    });
+  }
+  /* Scale the hero block down until it clears the first screen. Vertical fit,
+     unlike the horizontal one, is driven by a value font-size DOES control,
+     so it converges. */
+  function fitHero(){
+    var hero=document.querySelector('.hero'),
+        copy=document.querySelector('.hero-copy'),
+        nv=document.querySelector('nav');
+    if(!hero||!copy||!nv) return;
+    document.documentElement.style.setProperty('--navh', nv.offsetHeight+'px');
+    copy.style.setProperty('--hs',1);
+    var pad=parseFloat(getComputedStyle(hero).paddingTop)+parseFloat(getComputedStyle(hero).paddingBottom);
+    var avail=window.innerHeight - nv.offsetHeight - pad;
+    var scale=1, guard=0;
+    while(copy.scrollHeight>avail && scale>0.60 && guard++<30){
+      scale-=0.035;
+      copy.style.setProperty('--hs',scale.toFixed(3));
+    }
+  }
+  function boot(){ fitAll(); fitHero(); document.body.classList.add('ready'); frame(); }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(boot);
+    setTimeout(function(){ if(!document.body.classList.contains('ready')) boot(); },1200);
+  } else { boot(); }
+  var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){fitAll();fitHero();},140);});
+
+})();
+</script>
+</body>
+</html>
