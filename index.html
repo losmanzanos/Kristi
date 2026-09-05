@@ -59,12 +59,12 @@
   --sy:clamp(95px,12vw,175px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{
   font-family:var(--sans);background:var(--slate);color:var(--bone);
   opacity:0;transition:opacity .28s ease;
 
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.62;font-size:16.5px;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;line-height:1.62;font-size:16.5px;
 }
 img{display:block;max-width:100%}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:4}
@@ -74,6 +74,7 @@ img{display:block;max-width:100%}
 
 /* ---------- geometry (v3 vocabulary, v4 palette) ---------- */
 .geo{position:absolute;pointer-events:none;z-index:1;will-change:transform}
+section,header.hero{contain:paint}
 .g-frame{border:1.5px solid currentColor}
 .g-ring{border:1.5px solid currentColor;border-radius:50%}
 .g-arc{border:1.5px solid currentColor;border-radius:50%;
@@ -98,6 +99,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(46,61,70,.93);backdrop-fil
 .brand b{font-size:17px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bone)}
 .brand i{font-family:var(--hand);font-style:normal;font-size:30px;color:var(--brass);line-height:.7}
 .nav-links{display:flex;gap:clamp(16px,2.4vw,36px);align-items:center}
+.navtoggle{display:none;background:none;border:1.5px solid var(--line);color:var(--bone);padding:9px 14px;font:inherit;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:pointer}
 .nav-links a{color:var(--bone);text-decoration:none;font-size:11px;letter-spacing:.2em;
   text-transform:uppercase;font-weight:600;transition:color .3s}
 .nav-links a:hover{color:var(--brass-lt)}
@@ -223,10 +225,44 @@ footer a:hover{color:var(--brass-lt)}
   .hero-in,.stmt-cols,.q-in,.d-in,.k-in,.c-in{grid-template-columns:1fr}
   .three-grid{grid-template-columns:1fr;gap:44px}
   .f-in{grid-template-columns:1fr;gap:30px}
-  .hero-stage{height:360px;order:-1}
-  .q-stage,.k-stage,.c-stage{height:325px}
-  .nav-links a:not(.btn){display:none}
-  .hero{min-height:auto}
+  .hero{min-height:auto;padding-bottom:clamp(46px,9vw,70px)}
+  /* copy before imagery: the photo stack used to push the headline off-screen */
+  .hero-copy{order:1}
+  .hero-stage{order:2;height:clamp(250px,54vw,340px)}
+  .q-stage,.k-stage,.c-stage{height:clamp(250px,54vw,320px)}
+
+  .navtoggle{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--slate-dp);
+    border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
+    gap:0;padding:4px 0 10px;display:none;box-shadow:0 22px 40px -22px rgba(0,0,0,.6)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:15px var(--gutter);width:100%;font-size:12px;letter-spacing:.2em;
+    border-bottom:1px solid rgba(233,226,213,.07)}
+  .nav-links .btn{margin:10px var(--gutter) 2px;text-align:center;border-bottom:1.5px solid currentColor}
+}
+
+@media(max-width:760px){
+  .geo-lg{display:none}
+  .sec{padding:clamp(56px,13vw,84px) 0}
+  .hand-hero{font-size:clamp(48px,15vw,72px)}
+  .hand-xl{font-size:clamp(44px,14vw,66px)}
+  .hand-lg{font-size:clamp(38px,12vw,56px)}
+  .hand-md{font-size:clamp(32px,10vw,46px)}
+  h1{font-size:clamp(31px,8.8vw,44px)}
+  h2{font-size:clamp(24px,6.8vw,34px)}
+  .stmt-big{font-size:clamp(20px,5.6vw,28px)}
+  .q-text{font-size:clamp(20px,5.4vw,28px)}
+  .lead,.hero-copy .lead{font-size:17px}
+  body{font-size:16px}
+  .btn{padding:14px 22px;font-size:10px;letter-spacing:.2em}
+  .dl>div{grid-template-columns:1fr;gap:6px}
+  details p{padding-right:0}
+  summary{padding-right:40px}
+  .f-bot{flex-direction:column;gap:8px}
+}
+@media(max-width:560px){
+  .brand b{font-size:15px}
+  .brand i{font-size:26px}
 }
 body.ready{opacity:1}
 /* failsafe: reveal even if JS never runs */
@@ -252,7 +288,8 @@ body{animation:revealFallback 0s 1.5s forwards}
 <nav>
   <div class="wrap nav-in">
     <a class="brand" href="#"><b>Commend</b><i class="brand-mark">counseling</i></a>
-    <div class="nav-links">
+    <button class="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <div class="nav-links" id="navlinks">
       <a href="#why">Why</a>
       <a href="#how">How It Works</a>
       <a href="#details">Dates</a>
@@ -264,7 +301,7 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <div class="geo g-ring" data-sp="0.30" style="color:var(--brass);opacity:.26;width:640px;height:640px;left:-250px;top:-70px"></div>
+  <div class="geo g-ring geo-lg" data-sp="0.30" style="color:var(--brass);opacity:.26;width:640px;height:640px;left:-250px;top:-70px"></div>
   <div class="geo g-dot"  data-sp="0.55" style="color:rgba(205,155,98,.34);width:300px;height:300px;right:7%;top:4%"></div>
   <div class="geo g-frame" data-sp="-0.35" style="color:var(--slate-lt);opacity:.9;width:280px;height:280px;left:33%;bottom:-70px;transform:rotate(21deg)"></div>
 
@@ -299,7 +336,7 @@ body{animation:revealFallback 0s 1.5s forwards}
 <!-- ============ WHY ============ -->
 <section class="sec" id="why">
   <div class="stmt-bg"><img loading="lazy" decoding="async" src="terrain-aerial.jpg" alt=""></div>
-  <div class="geo g-ring" data-sp="0.45" style="color:var(--brass-lt);opacity:.28;width:520px;height:520px;right:-180px;top:8%"></div>
+  <div class="geo g-ring geo-lg" data-sp="0.45" style="color:var(--brass-lt);opacity:.28;width:520px;height:520px;right:-180px;top:8%"></div>
   <div class="wrap stmt-in rv">
     <span class="eyebrow">Why this exists</span>
     <span class="hand hand-xl" style="margin:-8px 0 20px -8px">under the surface</span>
@@ -313,8 +350,8 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <!-- ============ HOW ============ -->
 <section class="sec" id="how">
-  <div class="geo g-dot" data-sp="0.40" style="color:rgba(205,155,98,.26);width:340px;height:340px;left:-90px;top:12%"></div>
-  <div class="geo g-arc" data-sp="-0.50" style="color:var(--slate-lt);opacity:.95;width:400px;height:400px;right:-120px;bottom:6%"></div>
+  <div class="geo g-dot geo-lg" data-sp="0.40" style="color:rgba(205,155,98,.26);width:340px;height:340px;left:-90px;top:12%"></div>
+  <div class="geo g-arc geo-lg" data-sp="-0.50" style="color:var(--slate-lt);opacity:.95;width:400px;height:400px;right:-120px;bottom:6%"></div>
   <div class="wrap">
     <div class="three-head rv">
       <span class="eyebrow">What actually happens</span>
@@ -367,7 +404,7 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <!-- ============ DETAILS ============ -->
 <section class="sec" id="details">
-  <div class="geo g-ring" data-sp="0.50" style="color:var(--brass);opacity:.22;width:560px;height:560px;left:-200px;bottom:-140px"></div>
+  <div class="geo g-ring geo-lg" data-sp="0.50" style="color:var(--brass);opacity:.22;width:560px;height:560px;left:-200px;bottom:-140px"></div>
   <div class="geo g-hatch" data-sp="-0.45" style="color:rgba(154,166,174,.4);width:220px;height:300px;right:3%;top:8%"></div>
   <div class="wrap d-in">
     <div class="rv">
@@ -426,7 +463,7 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <!-- ============ FAQ ============ -->
 <section class="sec lt" style="background:var(--bone-2)">
-  <div class="geo g-ring" data-sp="0.40" style="color:rgba(162,82,48,.32);width:420px;height:420px;right:-140px;top:10%"></div>
+  <div class="geo g-ring geo-lg" data-sp="0.40" style="color:rgba(162,82,48,.32);width:420px;height:420px;right:-140px;top:10%"></div>
   <div class="wrap">
     <div style="text-align:center;max-width:660px;margin:0 auto" class="rv">
       <span class="eyebrow">Before you email</span>
@@ -446,7 +483,7 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <!-- ============ CONTACT ============ -->
 <section class="sec" id="contact">
-  <div class="geo g-ring" data-sp="0.50" style="color:var(--brass);opacity:.26;width:600px;height:600px;left:-220px;top:-120px"></div>
+  <div class="geo g-ring geo-lg" data-sp="0.50" style="color:var(--brass);opacity:.26;width:600px;height:600px;left:-220px;top:-120px"></div>
   <div class="geo g-dot" data-sp="-0.40" style="color:rgba(154,166,174,.34);width:280px;height:280px;right:6%;bottom:6%"></div>
   <div class="wrap c-in">
     <div class="rv">
@@ -491,6 +528,17 @@ body{animation:revealFallback 0s 1.5s forwards}
 
 <script>
 (function(){
+  var tog=document.querySelector('.navtoggle'), navlinks=document.querySelector('.nav-links');
+  function closeNav(){ if(navlinks){navlinks.classList.remove('open'); if(tog) tog.setAttribute('aria-expanded','false');} }
+  if(tog&&navlinks){
+    tog.addEventListener('click',function(){
+      var open=navlinks.classList.toggle('open');
+      tog.setAttribute('aria-expanded',open?'true':'false');
+    });
+    navlinks.addEventListener('click',function(e){ if(e.target.tagName==='A') closeNav(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeNav(); });
+    addEventListener('resize',function(){ if(innerWidth>980) closeNav(); });
+  }
   var layers=[].slice.call(document.querySelectorAll('[data-sp]'));
   layers.forEach(function(el){el.dataset.base=el.style.transform||'';});
 
