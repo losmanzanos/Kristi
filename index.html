@@ -236,9 +236,9 @@ footer a:hover{color:var(--brass-lt)}
     border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
     gap:0;padding:4px 0 10px;display:none;box-shadow:0 22px 40px -22px rgba(0,0,0,.6)}
   .nav-links.open{display:flex}
-  .nav-links a{padding:15px var(--gutter);width:100%;font-size:12px;letter-spacing:.2em;
+  .nav-links a:not(.btn){padding:15px var(--gutter);width:100%;font-size:12px;letter-spacing:.2em;
     border-bottom:1px solid rgba(233,226,213,.07)}
-  .nav-links .btn{display:block;width:auto;margin:12px var(--gutter) 6px;text-align:center}
+  .nav-links .btn{display:block;width:auto;margin:14px var(--gutter) 10px;text-align:center;border:1.5px solid currentColor;padding:15px 20px}
 }
 
 @media(max-width:760px){
