@@ -214,7 +214,7 @@ footer a:hover{color:var(--brass-lt)}
   .nav-links{padding-bottom:8px}
   .nav-links a:last-child{border-bottom:none}
   .nav-links a[aria-current="page"]{background:rgba(205,155,98,.10);box-shadow:inset 3px 0 0 var(--brass)}
-  .nav-links .btn{margin:10px var(--gutter) 2px;width:auto;text-align:center;border-bottom:1.5px solid currentColor}
+  .nav-links .btn{display:block;width:auto;margin:12px var(--gutter) 6px;text-align:center}
 }
 
 @media(max-width:760px){
